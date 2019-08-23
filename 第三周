@@ -1,0 +1,22 @@
+class Solution {
+
+    /**
+     * @param Integer $c
+     * @return Boolean
+     */
+    function judgeSquareSum($c) {
+        $i = 0;
+        $j = $c;
+        while($i<=$c){
+            $total = $i*$i+$j*$j;
+            if($total>$c){
+                $j--;
+            }else if($total<$c){
+                $i++;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
+}
