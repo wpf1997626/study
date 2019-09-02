@@ -1,0 +1,23 @@
+class Solution {
+
+    /**
+     * @param Integer $n
+     * @return Boolean
+     */
+    function isHappy($n) {
+        $x = $n;
+        for($i=0;$i<100;$i++){
+            $x = $this->happy($x);
+            if($x==1) return true;
+        }
+        return false;
+    }
+    function happy($x){
+        $sum = 0;
+        while($x != 0){
+            $sum += ($x % 10)*($x % 10);
+            $x /= 10;
+        }
+        return $sum;
+    }
+}
